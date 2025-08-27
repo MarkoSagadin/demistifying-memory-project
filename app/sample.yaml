@@ -1,0 +1,74 @@
+sample:
+  name: Azure IoT Hub app
+common:
+  sysbuild: true
+  build_only: true
+  platform_allow:
+    - nrf7002dk/nrf5340/cpuapp/ns
+tests:
+  app.azure_iot_hub.original:
+    extra_configs:
+      - CONFIG_ASSERT=y
+      - CONFIG_LTO=y
+      - CONFIG_ISR_TABLES_LOCAL_DECLARATION=y
+    extra_overlay_confs:
+      - enable_mcuboot.conf
+    extra_args:
+      - FILE_SUFFIX=original
+
+  app.azure_iot_hub.analysis:
+    extra_configs:
+      - CONFIG_APP_MEMORY_ANALYSIS_SHELL=y
+      - CONFIG_APP_SEND_LARGE_MESSAGE=y
+
+      - CONFIG_NET_IPV6=n # Disable IPv6 to save space and be faster on conneciton
+
+      - CONFIG_SHELL=y
+
+      - CONFIG_MBEDTLS_SHELL=y
+      - CONFIG_MBEDTLS_DEBUG=y
+      - CONFIG_MBEDTLS_DEBUG_C=y
+      - CONFIG_MBEDTLS_MEMORY_DEBUG=y
+      - CONFIG_TFM_CMAKE_BUILD_TYPE_RELWITHDEBINFO=y
+      - CONFIG_PM_PARTITION_SIZE_TFM=0x20000
+
+      - CONFIG_MEM_SLAB_TRACE_MAX_UTILIZATION=y
+      - CONFIG_NET_BUF_POOL_USAGE=y
+      - CONFIG_NET_DEBUG_NET_PKT_ALLOC=y
+      - CONFIG_NET_PKT_ALLOC_STATS=y
+      - CONFIG_NET_SHELL=y
+      - CONFIG_SYS_HEAP_RUNTIME_STATS=y
+
+      - CONFIG_THREAD_ANALYZER=y
+      - CONFIG_THREAD_NAME=y
+
+      - CONFIG_STACK_USAGE=y
+
+    extra_args:
+      - FILE_SUFFIX=no_mcuboot
+      - app_SNIPPET=rtt-shell
+
+  app.azure_iot_hub.optimized_1:
+    extra_configs:
+      - CONFIG_ASSERT=y
+      - CONFIG_LTO=y
+      - CONFIG_ISR_TABLES_LOCAL_DECLARATION=y
+    extra_overlay_confs:
+      - enable_mcuboot.conf
+      - optimized.conf
+    extra_args:
+      - FILE_SUFFIX=original
+
+  app.azure_iot_hub.optimized_2:
+    extra_configs:
+      - CONFIG_ASSERT=y
+      - CONFIG_ASSERT_NO_COND_INFO=y
+      - CONFIG_ASSERT_NO_MSG_INFO=y
+      - CONFIG_LTO=y
+      - CONFIG_ISR_TABLES_LOCAL_DECLARATION=y
+    extra_overlay_confs:
+      - enable_mcuboot.conf
+      - optimized.conf
+    extra_args:
+      - FILE_SUFFIX=original
+      - PM_STATIC_YML_FILE=pm_static_optimized2.yml

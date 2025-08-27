@@ -14,3 +14,8 @@ __pycache__/
 
 # docs
 /doc/_build*
+
+.cache/
+compile_commands.json
+certs/
+build*

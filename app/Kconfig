@@ -1,0 +1,30 @@
+#
+# Copyright (c) 2022 Nordic Semiconductor ASA
+#
+# SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+#
+
+menu "Azure IoT Hub sample"
+
+menu "Zephyr Kernel"
+source "Kconfig.zephyr"
+endmenu
+
+module = AZURE_IOT_HUB_SAMPLE
+module-str = Azure IoT Hub sample
+source "${ZEPHYR_BASE}/subsys/logging/Kconfig.template.log_config"
+
+config APP_SEND_LARGE_MESSAGE
+	bool "Send large message to IoT Hub"
+
+config APP_MEMORY_ANALYSIS_SHELL
+	bool "Enable memory analysis shell"
+
+config APP_WORK_Q_STACK_SIZE
+    int "Application's work queue stack size"
+    default 8192
+
+config APP_DROP_RPMSG
+    bool "Drop rpmsg section in the ram"
+
+endmenu
