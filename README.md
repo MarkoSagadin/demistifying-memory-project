@@ -1,5 +1,14 @@
 # Demistifying memory repository
 
+This repository was created for demonstration purposes as a part of my talk
+"Demystifying Memory: A Practical Tutorial on Managing & Optimizing Memory in
+Zephyr" that I held at Zephyr developer summit at Open Source Summit Europe 2025
+in Amsterdam, Netherlands.
+
+Slides to the talk can be found on the
+[Sched event page](https://osseu2025.sched.com/event/25Vvc/demystifying-memory-a-practical-tutorial-on-managing-optimizing-memory-in-zephyr-marko-sagadin-irnas),
+as well as in this repository, in the `doc/` folder.
+
 ## Getting started
 
 Before getting started, make sure you have a proper nRF Connect SDK development

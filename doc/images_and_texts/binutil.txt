@@ -1,0 +1,5 @@
+# Usecase: find type and location of a symbol by its name
+arm-zephyr-eabi-nm -l build/<app>/zephyr/zephyr.elf | grep <symbol>
+
+# Usecase: find location of a symbol by its address
+arm-zephyr-eabi-addr2line -e build/<app>/zephyr/zephyr.elf <address>

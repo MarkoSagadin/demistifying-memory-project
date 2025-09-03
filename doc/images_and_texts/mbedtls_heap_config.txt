@@ -1,0 +1,19 @@
+# Zephyr project
+CONFIG_MBEDTLS_SHELL=y
+CONFIG_MBEDTLS_DEBUG=y
+CONFIG_MBEDTLS_DEBUG_C=y
+CONFIG_MBEDTLS_MEMORY_DEBUG=y
+
+# For Zephyr project with TF-M also add:
+CONFIG_TFM_CMAKE_BUILD_TYPE_RELWITHDEBINFO=y
+# or
+CONFIG_DEBUG=y
+
+# NCS project with TF-M
+# Compile ${ZEPHYR_BASE}/modules/mbedtls/shell.c
+# in nrf/subsys/nrf_security/src/zephyr/CMakeLists.txt
+
+# Shell
+uart:~$ mbedtls heap
+Maximum (peak): 52340 bytes, 111 blocks
+Current: 0 bytes, 0 blocks

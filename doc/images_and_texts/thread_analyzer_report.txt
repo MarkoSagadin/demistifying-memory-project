@@ -1,0 +1,16 @@
+tcp_work            : STACK: unused 864 usage 160 / 1024 (15 %); CPU: 0 %
+                    : Total CPU cycles used: 0
+shell_uart          : STACK: unused 5472 usage 672 / 6144 (10 %); CPU: 0 %
+                    : Total CPU cycles used: 10426
+sysworkq            : STACK: unused 3864 usage 232 / 4096 (5 %); CPU: 0 %
+                    : Total CPU cycles used: 36
+nrf70_intr_wq       : STACK: unused 1448 usage 600 / 2048 (29 %); CPU: 0 %
+                    : Total CPU cycles used: 510
+nrf70_bh_wq         : STACK: unused 824 usage 1224 / 2048 (59 %); CPU: 0 %
+                    : Total CPU cycles used: 90
+logging             : STACK: unused 1544 usage 504 / 2048 (24 %); CPU: 0 %
+                    : Total CPU cycles used: 3790
+idle                : STACK: unused 248 usage 72 / 320 (22 %); CPU: 99 %
+                    : Total CPU cycles used: 3265937
+main                : STACK: unused 4792 usage 1352 / 6144 (22 %); CPU: 0 %
+                    : Total CPU cycles used: 1713

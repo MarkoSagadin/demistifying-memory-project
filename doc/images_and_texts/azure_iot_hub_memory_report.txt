@@ -1,0 +1,16 @@
+MCUboot:
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       46288 B        64 KB     70.63%
+             RAM:       21328 B        48 KB     43.39%
+        IDT_LIST:          0 GB        32 KB      0.00%
+
+TF-M:
+Memory region         Used Size  Region Size  %age Used
+           FLASH:      129976 B     130560 B     99.55%
+             RAM:       38996 B        48 KB     79.34%
+
+Azure IoT Hub sample:
+Memory region         Used Size  Region Size  %age Used
+           FLASH:      702060 B       768 KB     89.27%
+             RAM:      338376 B       400 KB     82.61%
+        IDT_LIST:          0 GB        32 KB      0.00%

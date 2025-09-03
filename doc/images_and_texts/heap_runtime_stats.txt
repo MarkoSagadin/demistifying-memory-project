@@ -1,0 +1,9 @@
+# prj.conf
+CONFIG_SYS_HEAP_RUNTIME_STATS=y
+
+# In shell
+uart:~$ kernel heap
+free:           11416
+allocated:      77828
+max. allocated: 83228
+sys_heap_init
